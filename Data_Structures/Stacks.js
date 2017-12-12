@@ -14,6 +14,12 @@ Stack.prototype.push = function(val) {
   return this.storage;
 };
 
+// OR
+Stack.prototype.push = function(val) {
+  this.storage = this.storage ? this.storage.concat(" ", val) : this.storage += val;
+  return this.storage;
+};
+
 Stack.prototype.pop = function() {
   var end = this.storage.lastIndexOf(" ");
   popped = this.storage.substring(end);
